@@ -35,6 +35,16 @@ export class CreateProductDto {
   @IsOptional()
   stock?: number;
 
+  @IsArray()
+  @IsString({ each: true })
+  @IsOptional()
+  tags: string[];
+
+  @IsArray()
+  @IsString({ each: true })
+  @IsOptional()
+  images?: string[];
+
   @IsString()
   @MinLength(1)
   title: string;
